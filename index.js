@@ -76,6 +76,7 @@ function getWinners(array, getFinals) {
         return gameData['Away Team Name'];
     }
     })
+    console.log(winners)
     return winners;
 }
 
@@ -113,10 +114,10 @@ Use the higher order function getAverageGoals to do the following:
 */
 
 function getAverageGoals(getFinals) {
-   let average = getFinals.reduce(function(counter, gameData){
-       return counter + gameData['Home Team Goals'] + ['Away Team Goals']
+   let avgGoals = fifaData.reduce(function(counter, goal){
+       return counter + (fifaData['Home Team Goals'] + fifaData['Away Team Goals'])
    },0)/getFinals.length;
-   return average.toFixed(1);
+   return avgGoals.toFixed(2);
 }
 
 
